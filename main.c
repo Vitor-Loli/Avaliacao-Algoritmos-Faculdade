@@ -1,7 +1,8 @@
 #include <ctype.h>
+#include <stdatomic.h>
 #include <stdio.h>
 #include <string.h>
-
+//Função exercício 1
 void exec1_equacao(){
     float a, b, c, x;
 
@@ -35,6 +36,7 @@ int comp_dias(int dia) {
 
 }
 
+//Função exercício 2
 void exec2_semana() {
     char dia_semana[14];
     int retorno;
@@ -71,6 +73,30 @@ void exec2_semana() {
 
 }
 
+//Função exercício 3
+void exec3_notas() {
+    float nota1, nota2, nota3, resultado;
+
+    printf("\nInforme a primeira nota do aluno: \n");
+    scanf("%f", &nota1);
+    printf("\nInforme a segunda nota do aluno: \n");
+    scanf("%f", &nota2);
+    printf("Informe a terceira nota do aluno: \n");
+    scanf("%f", &nota3);
+
+    nota1 = (nota1/100) * 40;
+    nota2 = (nota2/100) * 40;
+    nota3 = (nota3/100) * 20;
+
+    resultado = nota1 + nota2 + nota3;
+
+    if (resultado >= 6.0) {
+        printf("\nAprovado com média: %.2f", resultado);
+    }else {
+        printf("\nReprovado com média: %.2f", resultado);
+    }
+}
+
 int main(void) {
     int opc;
 
@@ -78,7 +104,7 @@ int main(void) {
         printf("\n\nMENU\n\n");
         printf("1. Exercício Equação\n");
         printf("2. Exercício Dia da Semana\n");
-        printf("3.\n");
+        printf("3. Exercício Notas\n");
         printf("4.\n");
         printf("5.\n");
         scanf("%d", &opc);
@@ -90,6 +116,10 @@ int main(void) {
 
             case 2:
                 exec2_semana();
+            break;
+
+            case 3:
+                exec3_notas();
             break;
             default:
                 printf("Opcao invalida\n");
