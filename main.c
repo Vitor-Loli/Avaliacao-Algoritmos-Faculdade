@@ -1,7 +1,5 @@
-#include <ctype.h>
-#include <stdatomic.h>
 #include <stdio.h>
-#include <string.h>
+
 //Função exercício 1
 void exec1_equacao(){
     float a, b, c, x;
