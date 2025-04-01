@@ -97,6 +97,23 @@ void exec3_notas() {
     }
 }
 
+//Função exercício 4
+void exec4_macas() {
+    float qtd_macas;
+
+    printf("\nInforme quantas maçãs foram compradas: \n");
+    scanf("%f", &qtd_macas);
+
+    if (qtd_macas >= 12) {
+        qtd_macas = (qtd_macas * 0.3) + qtd_macas;
+        printf("O valor a ser vendido o lote de maçãs é: R$%.2f",qtd_macas);
+    }else {
+        qtd_macas = ((qtd_macas * 1.3) * 0.3) + qtd_macas;
+        printf("O valor a ser vendido o lote de maçãs é: R$%.2f",qtd_macas);
+    }
+
+}
+
 int main(void) {
     int opc;
 
@@ -105,7 +122,7 @@ int main(void) {
         printf("1. Exercício Equação\n");
         printf("2. Exercício Dia da Semana\n");
         printf("3. Exercício Notas\n");
-        printf("4.\n");
+        printf("4. Exercício Maçãs\n");
         printf("5.\n");
         scanf("%d", &opc);
 
@@ -120,6 +137,10 @@ int main(void) {
 
             case 3:
                 exec3_notas();
+            break;
+
+            case 4:
+                exec4_macas();
             break;
             default:
                 printf("Opcao invalida\n");
