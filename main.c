@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 void exec1_equacao(){
     float a, b, c, x;
@@ -13,20 +14,61 @@ void exec1_equacao(){
 
     x = ((a * a) + (2 * b) - (2 * c)) / (2 * a) ;
 
-    printf("A resposta da equação x é: %f", x);
+    printf("A resposta da equação x é: %f.2", x);
+}
+
+//Função para cálculo de dias - Utilizada pelo exercício 2
+int comp_dias(int dia) {
+    int contador = 0;
+
+    for (int i = dia; i < 10; i++) {
+        if (i == 2) {
+            return contador;
+        }
+
+        if (i == 7) {
+            i = 0;
+        }
+
+        contador++;
+    }
+
 }
 
 void exec2_semana() {
-    char dia_semana[12];
+    char dia_semana[14];
+    int retorno;
 
-    printf("\nInforme uma dia semana: \n");
-    scanf("%12s", &dia_semana);
+    printf("\nInforme um dia da semana: \n");
+    scanf("%13s", &dia_semana);
 
-    printf("%s", dia_semana);
-
-    if (dia_semana == 'SEGUNDA-FEIRA' || dia_semana == 'SEGUNDA FEIRA' || dia_semana == 'SEGUNDA') {
-        printf("é segunda");
+    //Transforma tudo para minúsculo para facilitar comparação
+    for(int i = 0; i < strlen(dia_semana); i++) {
+        dia_semana[i] = tolower(dia_semana[i]);
     }
+
+    if (strcmp(dia_semana, "domingo") == 0){
+        retorno = comp_dias(0);
+    }else if(strcmp(dia_semana, "segunda") == 0 || strcmp(dia_semana, "segunda-feira") == 0 || strcmp(dia_semana, "segunda feira") == 0) {
+        retorno = comp_dias(1);
+    }else if (strcmp(dia_semana, "terça") == 0 || strcmp(dia_semana, "terça-feira") == 0 || strcmp(dia_semana, "terça feira") == 0) {
+        printf("\nDia de algoritmos!\n");
+        return;
+    }else if (strcmp(dia_semana, "quarta") == 0 || strcmp(dia_semana, "quarta-feira") == 0 || strcmp(dia_semana, "quarta feira") == 0) {
+        retorno = comp_dias(3);
+    }else if (strcmp(dia_semana, "quinta") == 0 || strcmp(dia_semana, "quinta-feira") == 0 || strcmp(dia_semana, "quinta feira") == 0) {
+        retorno = comp_dias(4);
+    }else if (strcmp(dia_semana, "sexta") == 0 || strcmp(dia_semana, "sexta-feira") == 0 || strcmp(dia_semana, "sexta feira") == 0){
+        retorno = comp_dias(5);
+    }else if (strcmp(dia_semana, "sabado") == 0 || strcmp(dia_semana, "sábado") == 0) {
+        retorno = comp_dias(6);
+    }else {
+        printf("\nDia não identificado\n");
+        return;
+    };
+
+    printf("Faltam ainda %d dia(s) para Terça-feira (Dia de algoritmos)", retorno);
+
 }
 
 int main(void) {
