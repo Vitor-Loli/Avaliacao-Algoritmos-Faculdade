@@ -17,7 +17,7 @@ void exec1_equacao(){
     printf("A resposta da equação x é: %f.2", x);
 }
 
-//Função para cálculo de dias, não sendo necessário reescrever várias vezes, - Utilizada pelo exercício 2
+//Função para cálculo de dias - Utilizada pelo exercício 2
 int comp_dias(int dia) {
     int contador = 0;
 
