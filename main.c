@@ -1,7 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
 //Função exercício 1
 void exec1_equacao(){
