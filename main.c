@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 //Função exercício 1
 void exec1_equacao(){
@@ -15,7 +16,7 @@ void exec1_equacao(){
 
     x = ((a * a) + (2 * b) - (2 * c)) / (2 * a) ;
 
-    printf("A resposta da equação x é: %f.2", x);
+    printf("A resposta da equação x é: %.2f", x);
 }
 
 //Função para cálculo de dias - Utilizada pelo exercício 2
@@ -114,6 +115,47 @@ void exec4_macas() {
 
 }
 
+//Função exercício 5
+void exec5_estados() {
+    int estado;
+
+    do {
+        printf("\nSelecione seu Estado\n");
+        printf("1. Santa Catarina\n");
+        printf("2. Rio Grande do Sul\n");
+        printf("3. Paraná\n");
+        printf("4. São Paulo\n");
+        printf("5. Sair\n");
+        scanf("%d", &estado);
+
+        switch (estado) {
+            case 1:
+                printf("\nCatarinense\n");
+            break;
+
+            case 2:
+                printf("\nRio Grandense\n");
+            break;
+
+            case 3:
+                printf("\nParanaense\n");
+            break;
+
+            case 4:
+                printf("\nPaulista\n");
+            break;
+
+            case 5:
+                printf("\nAté logo!\n");
+            break;
+
+            default:
+                printf("Estado inválido");
+        }
+    }while (estado != 5);
+
+}
+
 int main(void) {
     int opc;
 
@@ -123,7 +165,8 @@ int main(void) {
         printf("2. Exercício Dia da Semana\n");
         printf("3. Exercício Notas\n");
         printf("4. Exercício Maçãs\n");
-        printf("5.\n");
+        printf("5. Exercício Estados\n");
+        printf("6. Sair\n");
         scanf("%d", &opc);
 
         switch (opc) {
@@ -142,8 +185,17 @@ int main(void) {
             case 4:
                 exec4_macas();
             break;
+
+            case 5:
+                exec5_estados();
+            break;
+
+            case 6:
+                printf("\nAté logo!\n");
+            break;
+
             default:
-                printf("Opcao invalida\n");
+                printf("Opção inválida\n");
         }
     }while (opc != 6);
 }
