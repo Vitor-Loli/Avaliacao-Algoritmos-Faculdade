@@ -4,8 +4,9 @@
 
 //Função exercício 1
 void exec1_equacao(){
-    float a, b, c, x;
+    float a = 0, b = 0, c = 0, x = 0;
 
+    printf("\nAtenção! Para números decimais utilize o separador '.' EX: 2.5");
     printf("\nInforme o valor de A: \n");
     scanf("%f", &a);
     printf("Informe o valor de B: \n");
@@ -75,8 +76,9 @@ void exec2_semana() {
 
 //Função exercício 3
 void exec3_notas() {
-    float nota1, nota2, nota3, resultado;
+    float nota1 = 0, nota2 = 0, nota3 = 0, resultado = 0;
 
+    printf("\nAtenção! Para notas quebradas utilize o separador '.' EX: 8.6");
     printf("\nInforme a primeira nota do aluno: \n");
     scanf("%f", &nota1);
     printf("\nInforme a segunda nota do aluno: \n");
@@ -99,7 +101,7 @@ void exec3_notas() {
 
 //Função exercício 4
 void exec4_macas() {
-    float qtd_macas;
+    float qtd_macas = 0;
 
     printf("\nInforme quantas maçãs foram compradas: \n");
     scanf("%f", &qtd_macas);
